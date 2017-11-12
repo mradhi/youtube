@@ -42,7 +42,7 @@ abstract class Process
             }
 
         } catch ( ProcessFailedException $e ) {
-            return $e->getMessage();
+            // Here we can use logger to log exception message
         }
 
         return false;
