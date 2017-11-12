@@ -41,7 +41,7 @@ echo $youtube->isValidURL(); // TRUE
 echo $youtube->isPlaylist(); // FALSE
 
 
-$youtube->download();
+$youtube->processDownload();
 
 // ...
 
