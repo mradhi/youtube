@@ -23,7 +23,7 @@ $ composer require mradhi/youtube dev-master
 ```php
 
 $youtube = new Mate\Package\Youtube\Youtube([
-    'url'              => 'https://www.youtube.com/watch?v=HG713VfiXYAD',
+    'url'              => 'https://www.youtube.com/watch?v=HG713VfiXYAD', // You can add the URL later ( $youtube->setUrl(..))
     'output_filename'  => 'test',
     'output_directory' => '/var/www/html/youtube-dl/mp3'
 ]);
@@ -55,7 +55,7 @@ use Mate\Package\Youtube\Args\AvailableArgs as ArgOptions;
 use Mate\Package\Youtube\Options;
 
 new Mate\Package\Youtube\Youtube([
-     Options::URL               => 'https://www.youtube.com/watch?v=HG713VfiXYAD', // REQUIRED
+     Options::URL               => 'https://www.youtube.com/watch?v=HG713VfiXYAD', // OPTIONAL
      Options::OUTPUT_FILENAME   => 'test', // REQUIRED
      Options::OUTPUT_DIRECTORY  => '/var/www/html/youtube-dl/mp3', // REQUIRED
      ArgOptions::SLEEP_INTERVAL => 2,
