@@ -1,4 +1,5 @@
 {
+  "name": "mradhi/youtube",
   "autoload": {
     "psr-4": {
       "Mate\\Package\\Youtube\\": "src"
