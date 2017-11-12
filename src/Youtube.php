@@ -36,6 +36,9 @@ class Youtube implements YoutubeInterface
     /** @var Video|null */
     protected $video;
 
+    /** @var string|null */
+    protected $url;
+
     public function __construct( array $options = [] )
     {
         $resolver = new OptionsResolver();
@@ -83,6 +86,29 @@ class Youtube implements YoutubeInterface
         }
 
         return $this->video;
+    }
+
+    /**
+     * @return null|string
+     *
+     * @throws \Exception
+     */
+    protected function getUrl(): ?string
+    {
+        if (null !== $this->url) {
+            return $this->url;
+        }
+
+        if (! empty($url = $this->options[Options::URL])) {
+            return $url;
+        }
+
+        throw new \LogicException('Empty URL');
+    }
+
+    public function setUrl(string $url): void
+    {
+        $this->url = $url;
     }
 
     protected function prepareVideo(): ?Video
@@ -139,11 +165,6 @@ class Youtube implements YoutubeInterface
         return $process->run( $expectedJSON );
     }
 
-    private function getUrl(): string
-    {
-        return $this->options[ Options::URL ];
-    }
-
     private function getFilename(): string
     {
         return $this->options[ Options::OUTPUT_FILENAME ];
@@ -165,8 +186,10 @@ class Youtube implements YoutubeInterface
             ArgOptions::QUIET          => true,
             ArgOptions::SIMULATE       => false,
             ArgOptions::FLAT_PLAYLIST  => false,
+
+            Options::URL               => ''
         ] );
 
-        $resolver->setRequired( [ Options::URL, Options::OUTPUT_DIRECTORY, Options::OUTPUT_FILENAME ] );
+        $resolver->setRequired( [ Options::OUTPUT_DIRECTORY, Options::OUTPUT_FILENAME ] );
     }
 }
