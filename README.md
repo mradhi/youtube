@@ -1,8 +1,22 @@
 # Youtube Library based on Youtube-DL
 Youtube library to get video informations and download with multiple format based on Youtube-DL
 
-# youtube-dl
- Youtube downloader helper for PHP
+### Installation
+
+#### Prerequisites
+
+This package requires the following additional package:
+
+* PHP > 7.0
+* Youtube-DL tool
+* FFMpeg
+
+Open a command console, enter your project directory and execute the following command to download the latest version of this package:
+
+``` bash
+$ composer require mradhi/youtube dev-master
+```
+
 
 ### Usage:
 
