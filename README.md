@@ -14,7 +14,7 @@ $youtube = new Mate\Package\Youtube\Youtube([
     'output_directory' => '/var/www/html/youtube-dl/mp3'
 ]);
 
-/** @var Mate\Package\Youtube\Model\Video|null $video */
+/** @var Mate\Package\Youtube\Model\Video $video */
 $video = $youtube->getVideo();
 
 echo $video->getId();
