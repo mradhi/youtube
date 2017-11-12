@@ -93,7 +93,7 @@ class Youtube implements YoutubeInterface
      *
      * @throws \Exception
      */
-    protected function getUrl(): ?string
+    public function getUrl(): ?string
     {
         if (null !== $this->url) {
             return $this->url;
