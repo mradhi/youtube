@@ -165,7 +165,7 @@ class Youtube implements YoutubeInterface
         return $process->run( $expectedJSON );
     }
 
-    private function getFilename(): string
+    public function getFilename(): string
     {
         return $this->options[ Options::OUTPUT_FILENAME ];
     }
